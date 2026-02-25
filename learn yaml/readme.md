@@ -4,7 +4,7 @@ description: "A comprehensive developer's guide to YAML - from basics to advance
 icon: "file-code"
 ---
 
-# 💡 YAML: A Developer's Guide (Chai Edition)
+# 💡 YAML: A Developer's Guide
 
 <Note>
 *"Like brewing the perfect cup of chai, writing YAML is all about balance, structure, and getting the proportions just right."*
@@ -90,21 +90,21 @@ Like the basic ingredients of chai: tea and water.
 
 ```yaml
 # Simple key-value pairs
-chai_type: masala_chai
-temperature: hot
-servings: 2
-brewing_time: 5
+account_type: savings
+status: active
+holders: 2
+processing_time: 5
 ```
 
 ### Comments
 
 ```yaml
 # This is a single-line comment
-chai_type: masala_chai  # Inline comment
+account_type: savings  # Primary account type
 
-# Multi-line thoughts
-# can be expressed
-# like this
+# Multi-line notes
+# Account must maintain
+# minimum balance
 ```
 
 ### Indentation Rules
@@ -115,14 +115,14 @@ chai_type: masala_chai  # Inline comment
 
 ```yaml
 # Good - 2 spaces (recommended)
-chai_recipe:
-  base: black_tea
-  milk: whole_milk
+bank_account:
+  type: savings
+  currency: INR
 
-# Also valid - 4 spaces
-chai_recipe:
-    base: black_tea
-    milk: whole_milk
+# Also valid - 4 spaces (But This is Bad Practice)
+bank_account:
+    type: savings
+    currency: USD
 
 # Bad - mixing spaces and tabs (will cause errors!)
 # Don't do this!
@@ -136,80 +136,76 @@ chai_recipe:
 
 ```yaml
 # Unquoted strings
-chai_name: Masala Chai
+account_name: Kenil Gondaliya Savings
 
 # Quoted strings (when special characters are present)
-description: "Chai with cardamom, ginger & cloves"
-tagline: 'The best chai you''ll ever taste!'
+description: "Primary savings account for salary deposits"
+tagline: 'Customer''s trusted financial partner'
 
 # Multi-line strings - Literal style (preserves newlines)
-brewing_instructions: |
-  Boil water in a pot
-  Add tea leaves and spices
-  Simmer for 3-5 minutes
-  Add milk and sugar
-  Strain and serve hot
+baccount_notes: |
+  Account opened in 2023
+  Linked to salary deposits
+  Has internet banking enabled
 
 # Multi-line strings - Folded style (converts newlines to spaces)
-chai_story: >
-  Chai has been a staple beverage in India for centuries.
-  It brings people together and starts conversations.
-  Every household has their own special recipe.
+account_summary: >
+  This savings account is used for daily transactions.
+  It includes ATM access and online banking.
 ```
 
 ### Numbers
 
 ```yaml
 # Integers
-cups_per_day: 3
-servings: 2
+account_balance: 25000
+branch_code: 102
 
 # Floats
-tea_leaves_grams: 5.5
-milk_ratio: 0.75
+interest_rate: 4.5
+loan_amount: 150000.75
 
 # Scientific notation
-caffeine_mg: 1.2e+2  # 120 mg
+transaction_limit: 1.0e+4  # 10000
 
 # Octal (prefix with 0o)
 permission: 0o755
 
 # Hexadecimal (prefix with 0x)
-color_code: 0xFF5733
+color_code: 0x1A73E8
 ```
 
 ### Booleans
 
 ```yaml
 # Various ways to express true
-is_hot: true
-add_sugar: yes
-organic: on
-available: True
+is_active: true
+kyc_verified: yes
+internet_banking: on
+has_credit_card: True
 
 # Various ways to express false
-is_cold: false
-add_salt: no
-instant: off
-expired: False
+is_frozen: false
+loan_defaulted: no
+overdraft_enabled: off
 ```
 
 ### Null Values
 
 ```yaml
 # Different ways to represent null
-sweetener: null
-alternative_milk: ~
-optional_spice:
+middle_name: null
+secondary_email: ~
+nominee:
 ```
 
 ### Dates and Timestamps
 
 ```yaml
 # ISO 8601 format
-morning_brew: 2025-01-15
-exact_time: 2025-01-15T08:30:00Z
-local_time: 2025-01-15 08:30:00
+account_opened: 2025-01-15
+last_transaction: 2025-01-15T10:30:00Z
+last_login: 2025-01-15 08:30:00
 ```
 
 ---
@@ -220,96 +216,93 @@ local_time: 2025-01-15 08:30:00
 
 ```yaml
 # Block style (recommended)
-spices:
-  - cardamom
-  - ginger
-  - cinnamon
-  - cloves
-  - black_pepper
+linked_cards:
+  - debit_card
+  - credit_card
+  - prepaid_card
 
 # Flow style (inline)
-spices: [cardamom, ginger, cinnamon, cloves, black_pepper]
+linked_cards: [debit_card, credit_card, prepaid_card] // (This is old format current not used)
 
 # List of numbers
-steeping_times: [3, 5, 7, 10]
+transaction_limits: [1000, 5000, 10000] // (This is old format current not used)
 
 # Mixed types
-chai_facts:
-  - "Origin: India"
-  - 2000  # Years of history
-  - true  # Is delicious
+account_flags:
+  - "High Value Customer"
+  - 5
+  - true
 ```
 
 ### Nested Lists
 
 ```yaml
-chai_categories:
-  - name: Traditional
-    varieties:
-      - Masala Chai
-      - Ginger Chai
-      - Cardamom Chai
-  - name: Modern
-    varieties:
-      - Vanilla Chai
-      - Chocolate Chai
-      - Pumpkin Spice Chai
+bank_services:
+  - category: Accounts
+    types:
+      - Savings
+      - Current
+      - Fixed Deposit
+  - category: Loans
+    types:
+      - Home Loan
+      - Car Loan
+      - Personal Loan
 ```
 
 ### Dictionaries (Objects/Maps)
 
 ```yaml
 # Nested dictionaries
-masala_chai:
-  ingredients:
-    tea: black_tea
-    liquid:
-      water: 200ml
-      milk: 100ml
-    spices:
-      cardamom: 2_pods
-      ginger: 1_inch
-      cinnamon: 1_stick
-  preparation:
-    method: simmer
-    duration: 5_minutes
-    temperature: medium_heat
+msavings_account:
+  holder:
+    name: John Doe
+    id: CUST1023
+  balance:
+    available: 25000
+    currency: USD
+  settings:
+    overdraft_limit: 5000
+    daily_limit: 10000
+  status:
+    active: true
+    kyc_verified: true
 ```
 
 ### List of Dictionaries
 
 ```yaml
-chai_menu:
-  - name: Masala Chai
-    price: 30
-    size: regular
-    spicy: true
-  - name: Ginger Chai
-    price: 35
-    size: large
-    spicy: true
-  - name: Plain Chai
-    price: 25
-    size: regular
-    spicy: false
+accounts:
+  - type: Savings
+    balance: 25000
+    currency: USD
+    active: true
+  - type: Current
+    balance: 100000
+    currency: USD
+    active: true
+  - type: Fixed Deposit
+    balance: 50000
+    currency: USD
+    active: false
 ```
 
 ### Dictionary of Lists
 
 ```yaml
-chai_shop_inventory:
-  teas:
-    - Assam Black Tea
-    - Darjeeling Tea
-    - Ceylon Tea
-  spices:
-    - Cardamom
-    - Ginger
-    - Cinnamon
-  additives:
-    - Honey
-    - Sugar
-    - Jaggery
+bank_inventory:
+  account_types:
+    - Savings
+    - Current
+    - Fixed Deposit
+  loan_types:
+    - Home Loan
+    - Car Loan
+    - Education Loan
+  cards:
+    - Debit Card
+    - Credit Card
+    - Virtual Card
 ```
 
 ---
@@ -324,56 +317,44 @@ Like making a chai concentrate and using it multiple times!
 
 ```yaml
 # Define an anchor with &
-default_chai_base: &default_base
-  tea: black_tea
-  water: 200ml
-  brewing_time: 5
+default_account_settings: &default_settings (&default_settings Called Anchor)
+  currency: USD
+  daily_limit: 10000
+  overdraft_enabled: false
 
 # Reference it with *
-morning_chai:
-  <<: *default_base
-  milk: 100ml
-  sugar: 2_tsp
+john_account:
+  <<: *default_settings
+  account_type: savings
+  balance: 25000
 
-evening_chai:
-  <<: *default_base
-  milk: 150ml
-  sugar: 1_tsp
-  spices:
-    - cardamom
-    - ginger
+business_account:
+  <<: *default_settings
+  account_type: current
+  overdraft_enabled: true
+  balance: 100000
 
-# The above expands to:
-# morning_chai:
-#   tea: black_tea
-#   water: 200ml
-#   brewing_time: 5
-#   milk: 100ml
-#   sugar: 2_tsp
 ```
 
 ### Merge Keys
 
 ```yaml
 # Define reusable components
-standard_spices: &spices
-  cardamom: 2
-  ginger: 1_inch
-  cinnamon: 1_stick
+base_loan: &base_loan
+  interest_rate: 7.5
+  tenure_years: 5
 
-premium_spices: &premium
-  <<: *spices
-  saffron: 3_strands
-  star_anise: 1
+premium_loan: &premium_loan
+  <<: *base_loan
+  priority_processing: true
 
-# Use in recipes
-regular_chai:
-  <<: *spices
-  tea: black_tea
+home_loan:
+  <<: *base_loan
+  amount: 200000
 
-special_chai:
-  <<: *premium
-  tea: premium_blend
+vip_home_loan:
+  <<: *premium_loan
+  amount: 500000
 ```
 
 ### Multi-line Keys
@@ -389,33 +370,41 @@ special_chai:
 
 ```yaml
 # Using lists or objects as keys
-? - cardamom
-  - ginger
-  - cinnamon
-: "Masala blend"
+? - savings_account
+  - current_account
+  - fixed_deposit
+: "Retail banking products"
 
-? {name: chai, type: beverage}
-: "Hot drink made with tea and spices"
+? {customer_id: 1023, account_type: savings}
+: "Primary customer savings account"
+
+? {loan_type: home_loan, tenure_years: 20}
+: "Long-term secured loan product"
+
+? - debit_card
+  - credit_card
+  - virtual_card
+: "Card services offered by the bank"
 ```
 
 ### Explicit Data Types
 
 ```yaml
 # Force string interpretation
-zip_code: !!str 12345
+account_number: !!str 00123456789
 version: !!str 1.0
 
 # Force integer
-count: !!int "123"
+transaction_count: !!int "150"
 
 # Force float
-price: !!float "30"
+interest_rate: !!float "4.5"
 
 # Set
-unique_spices: !!set
-  ? cardamom
-  ? ginger
-  ? cinnamon
+authorized_roles: !!set
+  ? manager
+  ? teller
+  ? auditor
 ```
 
 ### YAML Tags
@@ -439,40 +428,40 @@ Using tabs instead of spaces will break your YAML!
 
 ```yaml
 # ❌ WRONG - using tabs
-chai:
-	type: masala	# This will break!
+account:
+	type: saving	# This will break!
 
 # ✅ CORRECT - using spaces
-chai:
-  type: masala
+account:
+  type: current
 ```
 
 ### 2. Inconsistent Indentation
 
 ```yaml
 # ❌ WRONG
-chai_recipe:
-  spices:
-    - cardamom
-    - ginger  # Extra space!
-  - cinnamon  # Wrong level!
+bank_account:
+  services:
+    - savings
+    - current   # Extra space!
+  - fixed_deposit   # Wrong indentation level!
 
 # ✅ CORRECT
-chai_recipe:
-  spices:
-    - cardamom
-    - ginger
-    - cinnamon
+bank_account:
+  services:
+    - savings
+    - current
+    - fixed_deposit
 ```
 
 ### 3. Special Characters in Unquoted Strings
 
 ```yaml
 # ❌ WRONG
-description: Chai & Coffee: The best!  # & and : are special
+description: Savings & Current: Premium Plan!  # & and : are special
 
 # ✅ CORRECT
-description: "Chai & Coffee: The best!"
+description: "Savings & Current: Premium Plan!"
 ```
 
 ### 4. Boolean Confusion
@@ -483,38 +472,38 @@ Watch out for the Norway problem! `no` is interpreted as `false`.
 
 ```yaml
 # These are ALL interpreted as booleans, not strings!
-answer_yes: yes
-answer_no: no
-answer_on: on
-answer_off: off
+kyc_completed: yes
+loan_approved: no
+internet_banking: on
+account_locked: off
 
 # If you want strings, quote them:
-country_code: "no"  # Norway
-response: "yes"
+country_code: "no"   # Norway
+customer_response: "yes"
 ```
 
 ### 5. Number Interpretation
 
 ```yaml
 # ❌ These might not be what you expect
-phone: 9876543210      # Treated as number
-version: 1.20          # Becomes 1.2 (trailing zero lost)
-octal: 0123            # Interpreted as octal!
+account_number: 00123456789   # Leading zeros removed
+interest_rate: 4.50           # May become 4.5
+branch_code: 0123             # Interpreted as octal
 
 # ✅ CORRECT - quote them
-phone: "9876543210"
-version: "1.20"
-code: "0123"
+account_number: "00123456789"
+interest_rate: "4.50"
+branch_code: "0123"
 ```
 
 ### 6. Empty Values
 
 ```yaml
 # These are different!
-value1:         # null/empty
-value2: ""      # empty string
-value3: null    # explicitly null
-value4: ~       # null
+nominee:          # null/empty
+middle_name: ""   # empty string
+secondary_email: null
+alternate_contact: ~
 ```
 
 ---
@@ -525,52 +514,45 @@ value4: ~       # null
 
 ```yaml
 # config.yaml
-chai_shop:
-  name: "Chai Haven"
-  location:
-    address: "123 Tea Street"
-    city: Mumbai
-    country: India
+bank:
+  name: Secure Trust Bank
+  headquarters:
+    address: "100 Finance Street"
+    city: New York
+    country: USA
     coordinates:
-      lat: 19.0760
-      lng: 72.8777
+      lat: 40.7128
+      lng: -74.0060
   operating_hours:
-    monday_to_friday:
-      open: "07:00"
-      close: "22:00"
+    weekdays:
+      open: "09:00"
+      close: "17:00"
     weekend:
-      open: "08:00"
-      close: "23:00"
-  menu:
+      open: "10:00"
+      close: "14:00"
+  services:
     - id: 1
-      name: "Classic Masala Chai"
-      price: 30
-      ingredients: [black_tea, milk, sugar, cardamom, ginger]
-      available: true
+      name: Savings Account
+      interest_rate: 4.5
+      active: true
     - id: 2
-      name: "Adrak Chai"
-      price: 35
-      ingredients: [black_tea, milk, sugar, ginger]
-      available: true
-    - id: 3
-      name: "Elaichi Chai"
-      price: 35
-      ingredients: [black_tea, milk, sugar, cardamom]
-      available: false
+      name: Home Loan
+      interest_rate: 7.5
+      active: true
   staff:
-    - name: "Ravi Kumar"
-      role: manager
-      experience_years: 10
-    - name: "Priya Sharma"
-      role: barista
-      experience_years: 3
+    - name: Alice Johnson
+      role: Branch Manager
+      experience_years: 12
+    - name: Mark Smith
+      role: Loan Officer
+      experience_years: 5
 ```
 
 ### 2. CI/CD Pipeline (Chai Delivery App)
 
 ```yaml
 # .github/workflows/chai-app.yml
-name: Chai Delivery App CI/CD
+name: Digital Banking Platform CI/CD
 
 on:
   push:
@@ -580,22 +562,27 @@ on:
 
 env:
   NODE_VERSION: '18'
-  APP_NAME: chai-delivery
+  APP_NAME: digital-banking-platform
+  REGISTRY: bank-registry.io
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
+
       - name: Install dependencies
         run: npm ci
+
       - name: Run tests
         run: npm test
+
       - name: Generate coverage
         run: npm run coverage
 
@@ -605,9 +592,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Build Docker image
         run: |
           docker build -t ${{ env.APP_NAME }}:${{ github.sha }} .
+
       - name: Push to registry
         run: |
           docker push ${{ env.APP_NAME }}:${{ github.sha }}
@@ -617,10 +606,14 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - name: Deploy to production
+      - name: Deploy to Kubernetes cluster
         run: |
           kubectl set image deployment/${{ env.APP_NAME }} \
-            app=${{ env.APP_NAME }}:${{ github.sha }}
+            banking-app=${{ env.REGISTRY }}/${{ env.APP_NAME }}:${{ github.sha }}
+
+      - name: Verify deployment rollout
+        run: |
+          kubectl rollout status deployment/${{ env.APP_NAME }}
 ```
 
 ### 3. Docker Compose (Chai Shop Microservices)
@@ -631,8 +624,8 @@ version: '3.8'
 
 services:
   # Frontend service
-  chai-frontend:
-    image: chai-shop/frontend:latest
+  banking-frontend:
+    image: bank-platform/frontend:latest
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -642,20 +635,20 @@ services:
       - REACT_APP_API_URL=http://localhost:8080
       - NODE_ENV=production
     depends_on:
-      - chai-backend
+      - banking-backend
     networks:
-      - chai-network
+      - banking-network
 
   # Backend API service
-  chai-backend:
-    image: chai-shop/backend:latest
+  banking-backend:
+    image: bank-platform/backend:latest
     build:
       context: ./backend
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
     environment:
-      - DATABASE_URL=postgresql://chai_user:chai_pass@postgres:5432/chai_db
+      - DATABASE_URL=postgresql://bank_user:bank_pass@postgres:5432/bank_db
       - REDIS_URL=redis://redis:6379
       - JWT_SECRET=${JWT_SECRET}
     depends_on:
@@ -664,21 +657,21 @@ services:
     volumes:
       - ./logs:/app/logs
     networks:
-      - chai-network
+      - banking-network
 
   # Database
   postgres:
     image: postgres:15-alpine
     environment:
-      - POSTGRES_USER=chai_user
-      - POSTGRES_PASSWORD=chai_pass
-      - POSTGRES_DB=chai_db
+      - POSTGRES_USER=bank_user
+      - POSTGRES_PASSWORD=bank_pass
+      - POSTGRES_DB=bank_db
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     networks:
-      - chai-network
+      - banking-network
 
   # Cache
   redis:
@@ -688,43 +681,43 @@ services:
     volumes:
       - redis_data:/data
     networks:
-      - chai-network
+      - banking-network
 
 volumes:
   postgres_data:
   redis_data:
 
 networks:
-  chai-network:
+  banking-network:
     driver: bridge
 ```
 
 ### 4. Kubernetes Deployment
 
 ```yaml
-# k8s/chai-app-deployment.yaml
+# k8s/banking-app-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: chai-delivery-app
+  name: digital-banking-app
   namespace: production
   labels:
-    app: chai-delivery
+    app: digital-banking
     version: v1
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: chai-delivery
+      app: digital-banking
   template:
     metadata:
       labels:
-        app: chai-delivery
+        app: digital-banking
         version: v1
     spec:
       containers:
-        - name: chai-app
-          image: chai-shop/app:1.0.0
+        - name: banking-app
+          image: bank-platform/app:1.0.0
           ports:
             - containerPort: 8080
               name: http
@@ -732,7 +725,7 @@ spec:
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
-                  name: chai-secrets
+                  name: banking-secrets
                   key: database-url
             - name: REDIS_HOST
               value: "redis-service"
@@ -761,11 +754,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: chai-delivery-service
+  name: digital-banking-service
   namespace: production
 spec:
   selector:
-    app: chai-delivery
+    app: digital-banking
   ports:
     - protocol: TCP
       port: 80
@@ -778,7 +771,7 @@ spec:
 ```yaml
 # application.yaml
 application:
-  name: Chai Delivery Platform
+  name: Digital Banking Platform
   version: 1.0.0
 
 server:
@@ -793,8 +786,8 @@ database:
   primary:
     host: localhost
     port: 5432
-    name: chai_db
-    username: chai_user
+    name: bank_db
+    username: bank_user
     password: ${DB_PASSWORD}  # From environment variable
     pool:
       min: 5
@@ -803,8 +796,8 @@ database:
   replica:
     host: replica.localhost
     port: 5432
-    name: chai_db
-    username: chai_reader
+    name: bank_db
+    username: bank_reader
     password: ${DB_REPLICA_PASSWORD}
 
 cache:
@@ -813,20 +806,20 @@ cache:
     port: 6379
     db: 0
     ttl: 3600
-    prefix: "chai:"
+    prefix: "bank:"
 
 logging:
   level: info
   format: json
   outputs:
     - type: file
-      path: /var/log/chai-app.log
+      path: /var/log/banking-app.log
       max_size: 100MB
       max_backups: 5
     - type: stdout
 
 features:
-  payment_gateway:
+  payment_processing:
     enabled: true
     provider: stripe
     test_mode: false
@@ -836,29 +829,29 @@ features:
       email: true
       sms: true
       push: true
-  loyalty_program:
+  fraud_detection:
     enabled: true
-    points_per_rupee: 1
-    redemption_rate: 0.1
+    real_time_monitoring: true
+    risk_threshold: 0.8
 
-chai_menu:
+bank_products:
   categories:
-    - name: Classic
+    - name: Accounts
       items:
-        - name: Masala Chai
-          price: 30
-          preparation_time: 5
-        - name: Ginger Chai
-          price: 35
-          preparation_time: 5
-    - name: Premium
+        - name: Savings Account
+          interest_rate: 4.5
+          minimum_balance: 1000
+        - name: Current Account
+          interest_rate: 0
+          minimum_balance: 5000
+    - name: Loans
       items:
-        - name: Kashmiri Kahwa
-          price: 80
-          preparation_time: 8
-        - name: Saffron Chai
-          price: 100
-          preparation_time: 10
+        - name: Home Loan
+          interest_rate: 7.5
+          max_tenure_years: 30
+        - name: Personal Loan
+          interest_rate: 12.0
+          max_tenure_years: 5
 ```
 
 ---
@@ -870,32 +863,33 @@ chai_menu:
 ```yaml
 # Choose 2 or 4 spaces and stick with it
 # 2 spaces (recommended)
-chai:
-  type: masala
-  ingredients:
-    - tea
-    - milk
+bank_account:
+  type: savings
+  currency: USD
+  features:
+    - internet_banking
+    - debit_card
 ```
 
 ### 2. Quote Strings When Necessary
 
 ```yaml
 # Quote strings with special characters
-description: "Chai & Coffee: Best combo!"
-url: "https://chai-shop.com"
-code: "00123"
+description: "Savings & Current: Premium Banking Plan!"
+website: "https://digitalbank.com"
+account_number: "00123456789"
 ```
 
 ### 3. Use Meaningful Key Names
 
 ```yaml
 # ❌ Not clear
-c: masala
-t: 5
+a: savings
+b: 4.5
 
 # ✅ Clear and descriptive
-chai_type: masala
-brewing_time_minutes: 5
+account_type: savings
+interest_rate_percentage: 4.5
 ```
 
 ### 4. Keep It Simple
@@ -903,8 +897,8 @@ brewing_time_minutes: 5
 ```yaml
 # Avoid over-nesting when possible
 # Instead of deep nesting, use flat structures with namespaced keys
-chai_recipe_spice_cardamom: 2
-chai_recipe_spice_ginger: 1
+loan_home_interest_rate: 7.5
+loan_home_max_tenure_years: 30
 ```
 
 ### 5. Use Comments Wisely
@@ -912,54 +906,52 @@ chai_recipe_spice_ginger: 1
 ```yaml
 # Document complex or non-obvious configurations
 server:
-  # Increase timeout for slow chai-brewing API endpoints
+  # Increased timeout for high transaction volume
   timeout: 60
-  # Connection pool sized for peak hours (500 concurrent users)
-  pool_size: 100
+  # Connection pool sized for peak hours (1000 concurrent users)
+  pool_size: 200
 ```
 
 ### 6. Leverage Anchors for Reusability
 
 ```yaml
 # Define common patterns once
-default_settings: &defaults
-  retry: 3
-  timeout: 30
+default_account_settings: &defaults
+  currency: USD
+  daily_limit: 10000
+  overdraft_enabled: false
 
-service_a:
+savings_account:
   <<: *defaults
-  endpoint: /api/v1
+  interest_rate: 4.5
 
-service_b:
+current_account:
   <<: *defaults
-  endpoint: /api/v2
+  overdraft_enabled: true
 ```
 
 ### 7. Validate Your YAML
 
 <CardGroup cols={3}>
-  <Card title="YAML Lint" icon="globe" href="http://www.yamllint.com">
-    Online validator
-  </Card>
-  <Card title="yamllint CLI" icon="terminal" href="https://github.com/adrienverge/yamllint">
-    Command-line linter
-  </Card>
-  <Card title="yq" icon="filter" href="https://github.com/mikefarah/yq">
-    YAML processor
-  </Card>
+  <Card title="YAML Lint" icon="globe" href="http://www.yamllint.com"> Online validator </Card>
+
+  <Card title="yamllint CLI" icon="terminal" href="https://github.com/adrienverge/yamllint"> 
+  Command-line linter </Card>
+
+  <Card title="yq" icon="filter" href="https://github.com/mikefarah/yq"> YAML processor </Card>
 </CardGroup>
 
 ### 8. Use Version Control Friendly Format
 
 ```yaml
 # Prefer block style for better diffs
-dependencies:
-  - package-a
-  - package-b
-  - package-c
+bank_services:
+  - savings_account
+  - current_account
+  - home_loan
 
 # Instead of flow style
-# dependencies: [package-a, package-b, package-c]
+# bank_services: [savings_account, current_account, home_loan]
 ```
 
 ---
@@ -967,7 +959,7 @@ dependencies:
 ## Quick Reference Card
 
 ```yaml
-# ☕ YAML Syntax Cheat Sheet
+# 🏦 YAML Syntax Cheat Sheet (Banking Example)
 
 # Key-Value
 key: value
@@ -1013,24 +1005,22 @@ use:
 ## Practice Exercises
 
 <AccordionGroup>
-  <Accordion title="Exercise 1: Create a Chai Recipe" icon="mug-hot">
-    Create a YAML file for your favorite chai recipe with:
+  <Accordion title="Exercise 1: Create a Bank Account Configuration" icon="building-columns">
+    Create a YAML file for a customer bank account with:
     - Name and description
-    - Ingredients (with quantities)
-    - Steps
-    - Metadata (prep time, servings, difficulty)
+    - Metadata (branch, opening date, status)
   </Accordion>
 
-  <Accordion title="Exercise 2: Configuration File" icon="gear">
-    Design a YAML configuration for a chai ordering app with:
+  <Accordion title="Exercise 2: Banking Application Configuration" icon="gear">
+    Design a YAML configuration for a digital banking app with:
     - Database settings
     - API endpoints
     - Feature flags
-    - Logging configuration
+    - Feature flags (KYC, fraud detection, payments)
   </Accordion>
 
-  <Accordion title="Exercise 3: Docker Compose" icon="docker">
-    Create a `docker-compose.yml` for a chai shop application with:
+  <Accordion title="Exercise 3: Docker Compose for Banking Platform" icon="docker">
+    Create a `docker-compose.yml` for a banking application with:
     - Web frontend
     - API backend
     - Database
@@ -1070,19 +1060,5 @@ use:
 
 ---
 
-## Summary
 
-<Note>
-YAML is like making chai - it requires:
-
-- ✅ **Precision** (indentation matters)
-- ✅ **Balance** (structure and readability)
-- ✅ **Quality ingredients** (proper data types)
-- ✅ **Practice** (the more you write, the better you get)
-
-Remember: Spaces, not tabs. Always validate. Keep it readable.
-</Note>
-
----
-
-*Happy YAML-ing! ☕*
+*Happy YAML-ing! 🏦*
