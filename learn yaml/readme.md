@@ -7,7 +7,7 @@ icon: "file-code"
 # 💡 YAML: A Developer's Guide
 
 <Note>
-*"Like brewing the perfect cup of chai, writing YAML is all about balance, structure, and getting the proportions just right."*
+*"Like managing a secure banking system, writing YAML is all about precision, structure, and keeping every detail in its proper place."*
 </Note>
 
 ## 📋 Table of Contents
