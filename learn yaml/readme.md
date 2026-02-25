@@ -1,10 +1,10 @@
 ---
-title: "YAML Complete Course"
+title: "Learn Complete YAML"
 description: "A comprehensive developer's guide to YAML - from basics to advanced techniques"
 icon: "file-code"
 ---
 
-# ☕ YAML: A Developer's Guide (Chai Edition)
+# 💡 YAML: A Developer's Guide (Chai Edition)
 
 <Note>
 *"Like brewing the perfect cup of chai, writing YAML is all about balance, structure, and getting the proportions just right."*
